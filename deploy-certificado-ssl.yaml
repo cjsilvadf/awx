@@ -1,0 +1,12 @@
+---
+- name: Deploy Certificate SSL
+  hosts: all
+  become: yes
+  vars:
+    favcolor: blue
+  tasks:
+    - name: Copy certificate
+      ansible.windows.win_copy:
+        src: files/"{{ item }}
+        dest: c:\certificado\"{{ item }}
+        state: present
